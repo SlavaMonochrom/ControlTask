@@ -1,10 +1,10 @@
-﻿string[] CreateStringArr(int n)
+﻿string[] CreateStringArr(int size)
 {
-    string[] newArray = new string[n];
-    for (int i = 0; i < n; i++)
+    string[] newArray = new string[size];
+    for (int i = 0; i < size; i++)
     {
         Console.Write($"Input {i + 1} element: ");
-        newArray[i] = Console.ReadLine();
+        newArray[i] = Convert.ToString(Console.ReadLine());
     }
     return newArray;
 }
@@ -41,10 +41,6 @@ void PrintArray(string[] array)
 
 }
 
-
-int randomMin = 1;
-int randomMax = 9;
-int arrSize = new Random().Next(randomMin, randomMax+1);
-Console.WriteLine($"Заполните количество {inputArraySize} элементов массива");
-
-string[] inputArray = CreateStringArr(inputArray);
+Console.WriteLine("Ввидите размер массива: ");
+int element = Convert.ToInt32(Console.ReadLine());
+string[] array = CreateStringArr(element);
