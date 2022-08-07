@@ -3,7 +3,7 @@
     string[] arrX = new string[size];
     for (int i = 0; i < size; i++)
     {
-        Console.Write($"Input {i}element: ");
+        Console.Write($"Input {i+1} element: ");
         arrX[i] = Convert.ToString(Console.ReadLine());
     }
     return arrX;
@@ -15,7 +15,7 @@ string[] countElement(string[] arrY)
     string[] newArray = new string[arrY.Length];
     for (int i = 0; i < arrY.Length; i++)
     {
-        if (arrY[i].Length <= 3) count++;
+        if (arrY[i].Length <= 3)
         {
             newArray[count] = arrY[i];
             count++;
@@ -24,12 +24,11 @@ string[] countElement(string[] arrY)
     return newArray;
 }
 
-
 void PrintArray(string[] array)
 {
     for(int i =0; i<array.Length;i++)
     {
-        Console.WriteLine($"{array[i]} ");
+        Console.WriteLine($"[{array[i]}]");
     }
 }
 
@@ -37,7 +36,5 @@ Console.WriteLine("Ввидите размер массива: ");
 int element = Convert.ToInt32(Console.ReadLine());
 string[] array = CreateStringArr(element);
 string[] newArray = countElement(array);
-PrintArray(array);
-Console.Write("->");
+Console.WriteLine("->");
 PrintArray(newArray);
-
