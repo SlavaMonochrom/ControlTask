@@ -1,46 +1,43 @@
 ﻿string[] CreateStringArr(int size)
 {
-    string[] newArray = new string[size];
+    string[] arrX = new string[size];
     for (int i = 0; i < size; i++)
     {
-        Console.Write($"Input {i + 1} element: ");
-        newArray[i] = Convert.ToString(Console.ReadLine());
+        Console.Write($"Input {i}element: ");
+        arrX[i] = Convert.ToString(Console.ReadLine());
+    }
+    return arrX;
+}
+
+string[] countElement(string[] arrY)
+{
+    int count = 0;
+    string[] newArray = new string[arrY.Length];
+    for (int i = 0; i < arrY.Length; i++)
+    {
+        if (arrY[i].Length <= 3) count++;
+        {
+            newArray[count] = arrY[i];
+            count++;
+        }
     }
     return newArray;
 }
 
-int countElement(string[] array)
-{
-    int elementCount = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i].Length <= 3) elementCount++;
-
-    }
-    return elementCount;
-}
-
-string[] outArr(string[] arr, int count)
-{
-    string[] arrOut = new string[count];
-    int n = 0;
-    for (int i = 0; n < arr.Length; i++)
-    {
-        if (arr[i].Length <=3)
-            {
-                arrOut[n] = arr[i];
-                n++;
-            }
-    }
-    return arrOut;
-}
 
 void PrintArray(string[] array)
 {
-
-
+    for(int i =0; i<array.Length;i++)
+    {
+        Console.WriteLine($"{array[i]} ");
+    }
 }
 
 Console.WriteLine("Ввидите размер массива: ");
 int element = Convert.ToInt32(Console.ReadLine());
 string[] array = CreateStringArr(element);
+string[] newArray = countElement(array);
+PrintArray(array);
+Console.Write("->");
+PrintArray(newArray);
+
