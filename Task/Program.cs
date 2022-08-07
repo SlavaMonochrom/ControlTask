@@ -15,7 +15,7 @@ string[] countElement(string[] arrY)
     string[] newArray = new string[arrY.Length];
     for (int i = 0; i < arrY.Length; i++)
     {
-        if (arrY[i].Length <= 3)
+        if (arrY[i].Length >= 3)
         {
             newArray[count] = arrY[i];
             count++;
@@ -28,7 +28,7 @@ void PrintArray(string[] array)
 {
     for(int i =0; i<array.Length;i++)
     {
-        Console.WriteLine($"[{array[i]}]");
+        Console.WriteLine($"{array[i]}");
     }
 }
 
